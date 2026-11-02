@@ -6,6 +6,8 @@
 
 *A real training run, sped up and shortened: generation 1, generation 27, and generation 54, where a Mario reaches the flag for the first time.*
 
+I built this project to understand how an AI actually learns, by building one, watching it, and experimenting with it rather than only reading about it.
+
 The game, physics, and neural network code are written in Python, with no ROM, emulator, or machine learning framework.
 
 ## How it works
@@ -39,16 +41,19 @@ if flag_get:
 
 Distance matters most, a small time penalty favors the faster of two equal runs, and the flag bonus outweighs everything else.
 
-## Results
+## Experiment: how big should a mutation be?
 
-With the settings above (100 Marios, 30 parents, mutation size `0.1`), two headless test runs reached the flag:
+**What happens if the mutation size changes from `0.01` to `0.1`?** I ran both with 100 Marios and 30 parents, using the same three random seeds and a limit of 200 generations:
 
-| Seed | Generation reaching the flag | Training time |
+| Seed | Mutation `0.01` | Mutation `0.1` |
 | --- | --- | --- |
-| 0 | 54 | 30 seconds |
-| 1 | 84 | 60 seconds |
+| 0 | Flag not reached (best: 93% of the level) | Flag at generation **54** |
+| 1 | Flag not reached (best: 69% of the level) | Flag at generation **84** |
+| 2 | Flag at generation 188 | Flag at generation **63** |
 
-Evolution is random, so your run will differ. Training also takes longer with the window open at normal speed; press `T` for turbo.
+With `0.1`, Mario reached the flag every time and always sooner. With `0.01`, the children stayed too close to their parents, so progress was much slower and only one run finished within the limit. Three seeds per setting is a small sample, but the difference is clear for this setup.
+
+The project uses `0.1`. Evolution is random, so your run will differ, and training takes longer with the window open at normal speed; press `T` for turbo.
 
 ## Getting started
 
@@ -143,7 +148,7 @@ python -m unittest discover tests
 
 ## How this was built
 
-This was a learning project made with [Claude Code](https://claude.com/claude-code). Claude built the game, the training infrastructure, and the visualization, and tutored me through the AI core. I wrote parts of the core and made the design decisions, including the scoring and mutation settings, with Claude's guidance and fixes along the way.
+This was a learning project made with [Claude Code](https://claude.com/claude-code). Claude helped with the Mario level design and also built the game, the training infrastructure, and the visualization. For the AI, I worked through the core step by step with Claude as a tutor: I wrote parts of it and chose the scoring and mutation settings, with Claude's guidance and fixes along the way. Claude also ran the mutation experiment above.
 
 ## Disclaimer
 
