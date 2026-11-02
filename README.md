@@ -2,7 +2,9 @@
 
 100 Marios learn to beat World 1-1 through trial, error, and evolution, and you can watch their neurons fire while it happens.
 
-![Generation 46 of training: 100 Marios play on the left, the leader's neural network updates live on the right, and a chart tracks progress across generations](docs/training.png)
+![Real training run from generation 1 to generation 54, where a Mario first reaches the flag: 100 Marios play on the left, the leader's neural network updates live on the right, and a chart tracks progress across generations](docs/training.gif)
+
+*A real training run, sped up and shortened: generation 1, generation 27, and generation 54, where a Mario reaches the flag for the first time.*
 
 The game, physics, and neural network code are written in Python, with no ROM, emulator, or machine learning framework.
 
