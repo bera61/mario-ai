@@ -148,7 +148,7 @@ python -m unittest discover tests
 
 ## How this was built
 
-This was a learning project made with [Claude Code](https://claude.com/claude-code). Claude wrote the game, the visualization, and the training code. I worked through the AI core step by step with Claude's help and chose the scoring and mutation settings.
+This was a learning project made with [Claude Code](https://claude.com/claude-code). Claude wrote the game and the visualization. Rest of the project was build by me.
 
 ## Disclaimer
 
