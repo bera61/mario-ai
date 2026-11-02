@@ -43,7 +43,7 @@ Distance matters most, a small time penalty favors the faster of two equal runs,
 
 ## Experiment: how big should a mutation be?
 
-**What happens if the mutation size changes from `0.01` to `0.1`?** I ran both with 100 Marios and 30 parents, using the same three random seeds and a limit of 200 generations:
+**What happens if the mutation size changes from `0.01` to `0.1`?** Both were tested with 100 Marios and 30 parents, using the same three random seeds and a limit of 200 generations:
 
 | Seed | Mutation `0.01` | Mutation `0.1` |
 | --- | --- | --- |
@@ -148,7 +148,7 @@ python -m unittest discover tests
 
 ## How this was built
 
-This was a learning project made with [Claude Code](https://claude.com/claude-code). Claude helped with the Mario level design and also built the game, the training infrastructure, and the visualization. For the AI, I worked through the core step by step with Claude as a tutor: I wrote parts of it and chose the scoring and mutation settings, with Claude's guidance and fixes along the way. Claude also ran the mutation experiment above.
+This was a learning project made with [Claude Code](https://claude.com/claude-code). Claude wrote the game, the visualization, and the training code. I worked through the AI core step by step with Claude's help and chose the scoring and mutation settings.
 
 ## Disclaimer
 
